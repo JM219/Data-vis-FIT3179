@@ -72,47 +72,67 @@
             "field": "Dom_Pax_In",
             "type": "quantitative",
             "title": "Domestic passengers Arriving"
+        }
+    },
+    "layer": [
+        {
+            "color": {
+                "field": "AIRPORT",
+                "type": "nominal",
+                "scale": {
+                    "domain": [
+                        "ADELAIDE",
+                        "ALICE SPRINGS",
+                        "MELBOURNE",
+                        "GOLD COAST",
+                        "HOBART",
+                        "PERTH",
+                        "BRISBANE",
+                        "SYDNEY",
+                        "SUNSHINE"
+                    ],
+
+                    "range": [
+                        "#e41a1c",
+                        "#984ea3",
+                        "#ff7f00",
+                        "#a6cee3",
+                        "#377eb8",
+                        "#a65628",
+                        "#2be41a",
+                        "#e47f1a",
+                        "#671ae4"
+                    ]   
+                } 
+            }
         },
+        {
+            "mark": {
+                "type": "text",
+                "dx": -5,
+                "dy": 5,
+                "fontSize": 10
+            },
 
-        "color": {
-            "field": "AIRPORT",
-            "type": "nominal",
-            "scale": {
-                "domain": [
-                    "ADELAIDE",
-                    "ALICE SPRINGS",
-                    "MELBOURNE",
-                    "GOLD COAST",
-                    "HOBART",
-                    "PERTH",
-                    "BRISBANE",
-                    "SYDNEY",
-                    "SUNSHINE"
-                ],
-
-                "range": [
-                    "#e41a1c",
-                    "#984ea3",
-                    "#ff7f00",
-                    "#a6cee3",
-                    "#377eb8",
-                    "#a65628",
-                    "#2be41a",
-                    "#e47f1a",
-                    "#671ae4"
-                ]   
-            } 
-        },
-
-        "tooltip": [
-            {"field": "AIRPORT", "type": "nominal"},
-            {"field": "Year", "type": "quantitative", "format": ","},
-            {"field": "Month", "type": "quantitative", "format": ","},
-            {"field": "Dom_Pax_In", "type": "quantitative", "format": ","},
-            {"field": "Dom_Pax_Out", "type": "quantitative", "format": ","},
-            {"field": "Dom_Pax_Total", "type": "quantitative", "format": ","}
-        ]
-                
-    }
+            "encoding": {
+                "text":{"field": "Country", "type": "nominal"},
+                "opacity":{
+                    "condition":{
+                        "test":"datum['AIRPORT' == 'Melbourne' || datum['AIRPORT' == 'Sydney'",
+                        "value": 1
+                    },
+                    "value": 0
+                },
+                "tooltip": [
+                    {"field": "AIRPORT", "type": "nominal"},
+                    {"field": "Year", "type": "quantitative", "format": ","},
+                    {"field": "Month", "type": "quantitative", "format": ","},
+                    {"field": "Dom_Pax_In", "type": "quantitative", "format": ","},
+                    {"field": "Dom_Pax_Out", "type": "quantitative", "format": ","},
+                    {"field": "Dom_Pax_Total", "type": "quantitative", "format": ","}
+                ]
+            }
+        }
+    ]                
 }
     
