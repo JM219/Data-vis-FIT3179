@@ -5,8 +5,8 @@
     "title": "Map of Australia",
     "projection": {"type": "equalEarth"},
     "data": {
-        "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Week_10_Homework/Maps/ABS_GCCSA_2011.json",
-        "format":{"type": "json"}
+        "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Week_10_Homework/Maps/Simplified_Australia_map.topojson",
+        "format":{"type": "topojson", "feature": "Simplified_Australia_map"}
     },
     "mark": {"type": "geoshape", "fill":"lightgray", "stroke":"black"}
 }
