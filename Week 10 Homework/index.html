@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+            <!-- Do I really need all these scripts?  -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all"> <!-- What is this file for? Does it require a CSS in the folder? -->
+    
+    </head>
+
+    <body>
+        <!--                                                            Heading, Name and first paragraph                                            -->
+        <div>
+            <h1>Week 10 Homework</h1>
+            <h3>Justin Meyzis, 28783484, FIT3179 2022</h3>
+            <p>This html contains 2 graphs to visualise and interact with.</p>
+        </div>
+
+
+
+        <!--                                                            Figure 1 with title                                                         -->
+        <div id="airport_scatter_plot"></div>
+        
+        <div>
+            <p>Figure 1: Scatterplot of the Domestic arivals vs the total Domestic traffic at that airport</p>
+        </div>
+
+        <!-- Why is it a javascript? Do I need a javascipt file?-->
+        <!-- What is vegaEmbed? looks to be the "vega" function that embeds the plot in the html website -->
+        <script type="text/javascript"> 
+
+            var fig1 = "Airport_Scatter_plot.vg.json";
+            vegaEmbed('#airport_scatter_plot', fig1).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+        </script>
+
+
+
+        <!--                                                            Figure 2 with title                                                         -->
+        <div id="Map_of_Australia"></div>
+
+        <div>
+            <p> Figure 2: JSON image of Australia embeded in the html file.</p>
+        </div>
+
+        <script type="text/javascript">
+
+            var fig2 = "####"
+            vegaEmbed('#Map_of_Australia',fig2).then(function(result) {} ).catch(console.error); // looks like in this script it uses a different syntax. Is this Java?
+            
+        </script>
+
+
+
+        <!-- NOTE: Interactivity seems to be "auto implemented" from the vega file in the html page (use week 9 as reference) -->
+
+
+    </body>
+
+</html>
