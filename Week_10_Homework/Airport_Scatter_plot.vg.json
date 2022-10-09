@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 400,
-    "title": "Airport Traffic in Australian airports",
+    "title": "",
     "data": {
         "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Week_10_Homework/Data_01.csv"
         
@@ -50,28 +50,42 @@
                 "step": 1,
                 "name": "Desired Year: "
             }
+        },
+
+        {
+            "name": "Month_Selected",
+            "bind": {
+                "input": "range",
+                "min": 1,
+                "max": 12,
+                "step": 1,
+                "name": "Desired Month: "
+            }
         }
     ],
 
 
     "transform": [
         {"filter": "Airport_Selection == null || datum.AIRPORT == Airport_Selection"},
-        {"filter": "datum.Year == 1985"},
-        {"filter": "datum.Month == 1"}
+        {"filter": "datum.Year == Year_Selected"},
+        {"filter": "datum.Month == Month_Selected"}
     ],
 
     "encoding": {
         "x": {
             "field": "Dom_Pax_Total",
             "type": "quantitative",
-            "title": "Domestic passengers total"
+            "title": "Domestic passengers total",
+            "axis": {"tickCount": 5},
+            "scale": {"domain": [0, 2500000]}
         },
 
         "y": {
             "field": "Dom_Pax_In",
             "type": "quantitative",
-            "title": "Domestic passengers Arriving"
-        }
+            "title": "Domestic passengers Arriving",
+            "scale": {"domain": [0, 1600000]}
+        }        
     },
 
     "layer": [
