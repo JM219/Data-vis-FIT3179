@@ -4,7 +4,7 @@
     "height": 400,
     "title": "Airport Traffic in Australian airports",
     "data": {
-        "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/Week_10_Homework/Data_01.csv"
+        "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Week_10_Homework/Data_01.csv"
         
     },
     "mark": "circle",
