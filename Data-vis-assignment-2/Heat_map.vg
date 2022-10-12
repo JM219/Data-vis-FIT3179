@@ -73,7 +73,7 @@
         "color": {
             "field": "Pax_Total",
             "type": "quantitative",
-            "legend": {"title":null},
+            "legend": {"title": "Number of passengers"},
             "scale": {"type": "pow"}
         }
     }
