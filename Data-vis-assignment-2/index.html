@@ -20,11 +20,11 @@
         <div class = "pure-g">
             <div class = "pure-u-1">
                 <h1>
-
+                    Busiest times in Australian
                 </h1>
 
                 <p>
-
+                    Paragraph 1
                 </p>
             </div>
         </div>
@@ -34,13 +34,13 @@
                                                             <!-- Australia Map row -->
         <div class = "pure-g">
             <div class = "pure-u-1-2">
-                <div id ="#Map_of_AUS"></div>
+                <div id ="Map_of_AUS"></div>
                 <!-- Import Map here -->
             </div>
 
             <div class = "pure-u-1-2">
                 <p>
-
+                    Map paragraph
                 </p>
             </div>
         </div>
@@ -53,12 +53,12 @@
 
             <div class = "pure-u-1-2">
                 <!-- Import Heatmap here -->
-                <div id = "#Heatmap_of_Total"></div>
+                <div id = "Heatmap_of_Total"></div>
             </div>
 
             <div class = "pure-u-1-2">
                 <p>
-
+                    Heatmap paragraph
                 </p>
             </div>
 
@@ -67,19 +67,24 @@
 
 
                                                             <!-- Airport International and Domestic airports -->
-            <div class = "pure-g">
-                <div class = "pure-u-1-2">
-                    <p>
-
-                    </p>
-                </div>
-
-                <div class = "pure-u-1-2">
-                    <div id = "#Dom-Int_Linegraph"></div>
-                    <!-- Import Dom/Int line graph -->
-                </div>
+        <div class = "pure-g">
+            <div class = "pure-u-1-2">
+                <p>
+                    line graph paragraph
+                </p>
             </div>
 
+            <div class = "pure-u-1-2">
+                <div id = "Dom-Int_Linegraph"></div>
+                <!-- Import Dom/Int line graph -->
+            </div>
+        </div>
+
+        <div>
+            <p>
+                Current problems I am aware of: graphs wigging out on initialisation, page layout/colour/groupings is poor, AUS map; Nothing special is on it - figuring out how to import from different data source, lingraph; "all" is over cluttered, International and Domestic lines are the same - "strokeDash" isnt working as desired 
+            </p>
+        </div>
 
 
                                                             <!-- Import Vega images  -->
@@ -89,11 +94,11 @@
             var Heatmap = "Heat_map.vg.json";
             var Linegraph = "Line_Graph_Dom_Int.vg.json";
         
-            vegaEmbed('#Map_of_AUS', AUSmap, { "actions": false });
+            vegaEmbed('#Map_of_AUS', AUSmap).then(function(result) {} ).catch(console.error);
         
-            vegaEmbed('#Heatmap_of_Total', Heatmap, { "actions": false }).then(function (result) {}).catch(console.error);
+            vegaEmbed('#Heatmap_of_Total', Heatmap).then(function (result) {}).catch(console.error);
         
-            vegaEmbed('#Dom-Int_Linegraph', Linegraph, { "actions": false }).then(function (result) {}).catch(console.error);
+            vegaEmbed('#Dom-Int_Linegraph', Linegraph).then(function (result) {}).catch(console.error);
         
           </script>
     </body>
