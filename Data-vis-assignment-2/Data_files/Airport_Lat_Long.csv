@@ -1,0 +1,21 @@
+ident,type,name,elevation_ft,continent,iso_country,iso_region,municipality,gps_code,iata_code,Latitude,Longitude
+YPAD,large_airport,Adelaide International Airport,20,OC,AU,AU-SA,Adelaide,YPAD,ADL,-34.945,138.531006
+YBAS,medium_airport,Alice Springs Airport,1789,OC,AU,AU-NT,Alice Springs,YBAS,ASP,-23.80669975,133.9019928
+YBNA,medium_airport,Ballina Byron Gateway Airport,7,OC,AU,AU-NSW,Ballina,YBNA,BNK,-28.83390045,153.5619965
+YBBN,large_airport,Brisbane International Airport,13,OC,AU,AU-QLD,Brisbane,YBBN,BNE,-27.38419914,153.1170044
+YBCS,medium_airport,Cairns International Airport,10,OC,AU,AU-QLD,Cairns,YBCS,CNS,-16.88579941,145.7550049
+YSCB,large_airport,Canberra International Airport,1886,OC,AU,AU-ACT,Canberra,YSCB,CBR,-35.30690002,149.1950073
+YPDN,medium_airport,Darwin International Airport,103,OC,AU,AU-NT,Darwin,YPDN,DRW,-12.41469955,130.8769989
+YBCG,medium_airport,Gold Coast Airport,21,OC,AU,AU-QLD,Gold Coast,YBCG,OOL,-28.1644001,153.5050049
+YBHM,medium_airport,Hamilton Island Airport,15,OC,AU,AU-QLD,Hamilton Island,YBHM,HTI,-20.35810089,148.9519959
+YMHB,medium_airport,Hobart International Airport,13,OC,AU,AU-TAS,Hobart,YMHB,HBA,-42.83610153,147.5099945
+YPKA,medium_airport,Karratha Airport,29,OC,AU,AU-WA,Karratha,YPKA,KTA,-20.71220016,116.7730026
+YMLT,medium_airport,Launceston Airport,562,OC,AU,AU-TAS,Launceston,YMLT,LST,-41.54529953,147.2140045
+YBMK,medium_airport,Mackay Airport,19,OC,AU,AU-QLD,Mackay,YBMK,MKY,-21.17169952,149.1799927
+YMEN,medium_airport,Melbourne Essendon Airport,282,OC,AU,AU-VIC,Melbourne,YMEN,MEB,-37.7281,144.901993
+YPPH,large_airport,Perth International Airport,67,OC,AU,AU-WA,Perth,YPPH,PER,-31.94029999,115.9670029
+YBRK,medium_airport,Rockhampton Airport,34,OC,AU,AU-QLD,Rockhampton,YBRK,ROK,-23.38190079,150.4750061
+YBMC,medium_airport,Sunshine Coast Airport,15,OC,AU,AU-QLD,Maroochydore,YBSU,MCY,-26.6033,153.091003
+YSSY,large_airport,Sydney Kingsford Smith International Airport,21,OC,AU,AU-NSW,Sydney,YSSY,SYD,-33.94609833,151.177002
+YBTL,medium_airport,Townsville Airport,18,OC,AU,AU-QLD,Townsville,YBTL,TSV,-19.25250053,146.7649994
+YWLM,medium_airport,Newcastle Airport,31,OC,AU,AU-NSW,Williamtown,YWLM,NTL,-32.79499817,151.8339996
