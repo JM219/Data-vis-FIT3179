@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 400,
+    "title": "Heatmap of traffic",
+    "data": {
+        "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_01.csv"
+    },
+
+    "params": [
+        {
+            "name": "Airport_Selection",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "null",
+                    "ADELAIDE",
+                    "ALICE SPRINGS",
+                    "MELBOURNE",
+                    "GOLD COAST",
+                    "HOBART",
+                    "PERTH",
+                    "BRISBANE",
+                    "SYDNEY",
+                    "SUNSHINE"
+                ],
+                "labels": [
+                    "Select an airport",
+                    "Adelaide",
+                    "Alice Springs",
+                    "Melbourne",
+                    "Gold Coast",
+                    "Hobart",
+                    "Perth",
+                    "Brisbane",
+                    "Sydney",
+                    "Sunshine"
+                ],
+                "name": "Airport Selection: "
+            }
+        }
+    ],
+
+    "transform": [
+        {"filter": "Airport_Selection == null || datum.AIRPORT == Airport_Selection"}
+    ],
+
+    "config": {
+        "view": {
+            "strokeWidth": 0,
+            "step": 20
+        },
+        "axis": {
+            "domain": false
+        }
+    },
+
+    "mark": {"type": "rect", "tooltip": true},
+    "encoding": {
+        "x": {
+            "field": "Month",
+            "timeUnit": "month",
+            "type": "ordinal",
+            "title": "month"
+        },
+
+        "y": {
+            "field": "Year",
+            "timeUnit": "year",
+            "type": "ordinal",
+            "title": "month"
+        },
+
+        "color": {
+            "field": "Pax_Total",
+            "type": "quantitative",
+            "legend": {"title": "Number of passengers"},
+            "scale": {"type": "pow"}
+        }
+    }
+}
