@@ -10,10 +10,10 @@
     "params": [
         {
             "name": "Airport_Selection",
+            "value": "PERTH",
             "bind": {
                 "input": "select",
                 "options": [
-                    null,
                     "ADELAIDE",
                     "ALICE SPRINGS",
                     "MELBOURNE",
@@ -25,7 +25,6 @@
                     "SUNSHINE"
                 ],
                 "labels": [
-                    "Show all",
                     "ADELAIDE",
                     "ALICE SPRINGS",
                     "MELBOURNE",
@@ -42,6 +41,7 @@
 
         {
             "name": "Year_Selected",
+            "value": 1990,
             "bind": {
                 "input": "range",
                 "min": 1985,
@@ -54,8 +54,8 @@
 
 
     "transform": [
-        {"filter": "Airport_Selection == null || datum.AIRPORT == Airport_Selection"},
-        {"filter": "datum.Year == null || datum.Year == Year_Selected"}
+        {"filter": "datum.AIRPORT == Airport_Selection"},
+        {"filter": "datum.Year == Year_Selected"}
     ],
 
     "layer": [
