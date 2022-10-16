@@ -1,0 +1,130 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 450,
+    "height": 400,
+    "title": "",
+    "background": "rgb(0,0,0,0)",
+    "projection": {"type": "equirectangular"},
+
+    "params": [
+        {
+            "name": "Year_Selected",
+            "value": 1985,
+            "bind": {
+                "input": "range",
+                "min": 1985,
+                "max": 2021,
+                "step": 1,
+                "name": "Desired Year: "
+            }
+
+        },
+
+        {
+            "name": "Month_Selected",
+            "value": 1,
+            "bind": {
+                "input": "range",
+                "min": 1,
+                "max": 12,
+                "step": 1,
+                "name": "Desired Month: "
+            }
+        },
+
+        {
+            "name": "Traffic_Type",
+            "value": "Dom_Pax_Total",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Dom_Pax_Total",
+                    "Int_Pax_Total",
+                    "Pax_Total"
+                ],
+                "labels": [
+                    "Domestic Flights",
+                    "International Flights",
+                    "Everything"                    
+                ],
+                "name": "Traffic Selection: "
+            }
+        }
+    ],
+
+    "layer":[
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Week_10_Homework/Maps/Simplified_Australia_map.json",
+                "format":{"type": "topojson", "feature": "ABS_GCCSA_2011"}
+            },
+            "mark": {"type": "geoshape", "fill":"lightgray", "stroke":"black"}
+        },
+        {
+            "data":{
+                "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_files/Data_01.csv"
+            },
+            
+            "transform": [
+
+                {"filter": "datum.Year == Year_Selected"},
+                {"filter": "datum.Month == Month_Selected"},  
+
+                {      
+                    "lookup": "AIRPORT",
+                        "from": {
+                            "data": {
+                                "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_files/Airport_Lat_Long.csv"
+                            },
+                            "key": "municipality",
+                            "fields": ["Latitude","Longitude"]
+                        },
+                        "as": ["Lat_Pos","Long_Pos"]
+                }
+            ],
+
+            "mark": { "type": "circle", "fillOpacity": 0.5},
+
+            "encoding": {
+                "longitude": {"field": "Long_Pos", "type": "quantitative"},
+                "latitude":  {"field": "Lat_Pos", "type": "quantitative"},
+                "size": {
+                    "field": "Pax_Total",
+                    "type":"quantitative",
+                    "scale": {"domain": [0, 100000, 200000, 300000, 400000, 500000, 1000000, 1500000, 2000000, 3000000]}},
+                "color": {"value": "#DC143C"}                
+            }
+        },
+        {
+            "data":{
+                "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_files/Data_01.csv"
+            },
+            
+            "transform": [
+
+                {"filter": "datum.Year == Year_Selected"},
+                {"filter": "datum.Month == Month_Selected"},  
+
+                {      
+                    "lookup": "AIRPORT",
+                        "from": {
+                            "data": {
+                                "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_files/Airport_Lat_Long.csv"
+                            },
+                            "key": "municipality",
+                            "fields": ["Latitude","Longitude"]
+                        },
+                        "as": ["Lat_Pos","Long_Pos"]
+                }
+            ],
+
+            "mark": { "type": "circle", "tooltip": {"content":"data"}, "fillOpacity": 0},
+
+            "encoding": {
+                "longitude": {"field": "Long_Pos", "type": "quantitative"},
+                "latitude":  {"field": "Lat_Pos", "type": "quantitative"},
+                "size": { "value": 300  }
+                } 
+        }        
+    ]
+}
