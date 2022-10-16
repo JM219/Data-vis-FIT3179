@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
-    "title": "Heatmap of traffic",
+    "title": "",
+    "background": "#9fa8ac",
     "data": {
         "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_01.csv"
     },
@@ -61,14 +62,14 @@
             "field": "Month",
             "timeUnit": "month",
             "type": "ordinal",
-            "title": "month"
+            "title": "Month"
         },
 
         "y": {
             "field": "Year",
             "timeUnit": "year",
             "type": "ordinal",
-            "title": "month"
+            "title": "Year"
         },
 
         "color": {
