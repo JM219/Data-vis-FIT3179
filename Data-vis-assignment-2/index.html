@@ -12,85 +12,100 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css" />
         
         <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="CSS/styles.css" media="all">
     
     </head>
 
     <body>
-                                                            <!-- Heading and Intro paragraph -->
-        <div class = "pure-g">
-            <div class = "pure-u-1">
-                <h1>
-                    Busiest times in Australian airports
-                </h1>
+        <div class = "page">
+                                                                <!-- Heading and Intro paragraph -->
+            <div class = "pure-g">
+                <div class = "pure-u-1">
+                    <div>
+                        <h1 class = "heading">
+                            Busiest times in Australian airports
+                        </h1>
 
+                        <p class = "intro">
+                            Intro paragraph
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Map pixels seem to be larger then the standard collumn pixels -->
+
+                                                                <!-- Australia Map row -->
+            <div class = "pure-g">
+                <div class = "pure-u-4-5">
+                    <div id ="Map_of_AUS" ></div>
+                    <!-- Import Map here -->
+                </div>
+
+                <div class = "pure-u-1-5">
+                    <div>
+                        <p>
+                            Map paragraph
+                        </p>
+                    </div>  
+                </div>
+            </div>
+
+
+
+
+                                                                <!-- Heatmap -->
+            <div class = "pure-g">
+
+                <div class = "pure-u-3-5 heatmapcss">
+                    <!-- Import Heatmap here -->
+                    <div id = "Heatmap_of_Total"></div>
+                </div>
+
+                <div class = "pure-u-2-5">
+                    <div>
+                        <p>
+                            Heatmap paragraph
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+                                                                <!-- Airport International and Domestic airports -->
+            <div class = "pure-g">
+                <div class = "pure-u-1-2">
+                    <div>
+                        <p>
+                            line graph paragraph
+                        </p>
+                    </div>
+                </div>
+
+                <div class = "pure-u-1-2">
+                    <div id = "Dom-Int_Linegraph"></div>
+                    <!-- Import Dom/Int line graph -->
+                </div>
+            </div>
+
+            <div class = "source">
                 <p>
-                    Intro paragraph
+                    Created by: Justin Meyzis 28783484 Data Sources: 
                 </p>
             </div>
-        </div>
-
-
-
-                                                            <!-- Australia Map row -->
-        <div class = "pure-g">
-            <div class = "pure-u-1-2">
-                <div id ="Map_of_AUS"></div>
-                <!-- Import Map here -->
-            </div>
-
-            <div class = "pure-u-1-2">
+            <div>
                 <p>
-                    Map paragraph
+                    Current problems I am aware of: graphs wigging out on initialisation, page layout/colour/groupings is poor, AUS map; Nothing special is on it - figuring out how to import from different data source, lingraph; "all" is over cluttered, International and Domestic lines are the same - "strokeDash" isnt working as desired 
                 </p>
             </div>
-        </div>
-
-
-
-
-                                                            <!-- Heatmap -->
-        <div class = "pure-g">
-
-            <div class = "pure-u-1-2">
-                <!-- Import Heatmap here -->
-                <div id = "Heatmap_of_Total"></div>
-            </div>
-
-            <div class = "pure-u-1-2">
-                <p>
-                    Heatmap paragraph
-                </p>
-            </div>
-
-        </div>
-
-
-
-                                                            <!-- Airport International and Domestic airports -->
-        <div class = "pure-g">
-            <div class = "pure-u-1-2">
-                <p>
-                    line graph paragraph
-                </p>
-            </div>
-
-            <div class = "pure-u-1-2">
-                <div id = "Dom-Int_Linegraph"></div>
-                <!-- Import Dom/Int line graph -->
-            </div>
-        </div>
-
-        <div>
-            <p>
-                Current problems I am aware of: graphs wigging out on initialisation, page layout/colour/groupings is poor, AUS map; Nothing special is on it - figuring out how to import from different data source, lingraph; "all" is over cluttered, International and Domestic lines are the same - "strokeDash" isnt working as desired 
-            </p>
-        </div>
-
+        </div>  
 
                                                             <!-- Import Vega images  -->
         <script type="text/javascript">
 
-            var AUSmap = "Basic_Map_with_points_01.vg.json";
+            var AUSmap = "Map_Adjustable_Sizes.vg.json";
             var Heatmap = "Heat_map.vg.json";
             var Linegraph = "Line_Graph_Dom_Int.vg.json";
         

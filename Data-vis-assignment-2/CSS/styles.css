@@ -1,0 +1,54 @@
+/* Main page */
+.page {
+    width: 900px;
+    background-color: #9fa8ac;
+    margin: auto;
+    padding: 50px;
+    padding-top: 30px;
+}
+
+/* Body background */
+body {
+    background-color: #e3e9ec;
+}
+
+/* Section background */
+
+
+/* Main heading */
+.heading {
+    font-size: 55px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Introduction paragraph */
+.intro {
+    font-size: medium;
+    font-family: "Arial";
+}
+
+.map {
+    width: 500px; /* This doesnt limit the map width, only the collumn. Past 400px or 110mm it seems to not work- it probably clashes with the column coding - will need to do it in vega and adjust the collumn spacing */
+}
+
+.heatmapcss {
+    align-items: right;
+}
+
+/* Plot title */
+.plotTitle {
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Explination paragraphs */
+.explination {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Source Line */
+.source {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
