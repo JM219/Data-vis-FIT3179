@@ -30,25 +30,6 @@
                 "step": 1,
                 "name": "Desired Month: "
             }
-        },
-
-        {
-            "name": "Traffic_Type",
-            "value": "Dom_Pax_Total",
-            "bind": {
-                "input": "select",
-                "options": [
-                    "Dom_Pax_Total",
-                    "Int_Pax_Total",
-                    "Pax_Total"
-                ],
-                "labels": [
-                    "Domestic Flights",
-                    "International Flights",
-                    "Everything"                    
-                ],
-                "name": "Traffic Selection: "
-            }
         }
     ],
 
