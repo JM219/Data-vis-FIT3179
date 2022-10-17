@@ -1,0 +1,178 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 400,
+    "background": "#9fa8ac",
+    "title": "",
+    "data": {
+        "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_files/Data_01.csv"        
+    },
+
+    "params": [
+        {
+            "name": "Airport_Selection",
+            
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "ADELAIDE",
+                    "ALICE SPRINGS",
+                    "MELBOURNE",
+                    "GOLD COAST",
+                    "HOBART",
+                    "PERTH",
+                    "BRISBANE",
+                    "SYDNEY",
+                    "SUNSHINE"
+                ],
+                "labels": [
+                    "Show all",
+                    "ADELAIDE",
+                    "ALICE SPRINGS",
+                    "MELBOURNE",
+                    "GOLD COAST",
+                    "HOBART",
+                    "PERTH",
+                    "BRISBANE",
+                    "SYDNEY",
+                    "SUNSHINE"
+                ],
+                "name": "Airport Selection: "
+            }
+        },
+
+        {
+            "name": "Year_Selected",
+            "value": 1990,
+            "bind": {
+                "input": "range",
+                "min": 1985,
+                "max": 2021,
+                "step": 1,
+                "name": "Desired Year: "
+            }
+        },
+
+        {
+            "name": "Travel",
+            "value": "International"
+        }
+    ],
+
+
+    "transform": [
+        {"filter": "Airport_Selection == null || datum.AIRPORT == Airport_Selection"},
+        {"filter": "datum.Year == Year_Selected"}
+    ],
+
+    "layer": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Month",
+                    "type": "ordinal",
+                    "title": "Month"
+                },
+
+                "y": {
+                    "field": "Dom_Pax_Total",
+                    "type": "quantitative",
+                    "title": "Passengers Arriving",
+                    "scale": {"domain": [0, 3000000]}
+                },
+
+                "color": {
+                    "field": "AIRPORT",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "ADELAIDE",
+                            "ALICE SPRINGS",
+                            "MELBOURNE",
+                            "GOLD COAST",
+                            "HOBART",
+                            "PERTH",
+                            "BRISBANE",
+                            "SYDNEY",
+                            "SUNSHINE"
+                        ],
+
+                        "range": [
+                            "#e41a1c",
+                            "#984ea3",
+                            "#ff7f00",
+                            "#a6cee3",
+                            "#377eb8",
+                            "#a65628",
+                            "#2be41a",
+                            "#e6ff4a",
+                            "#671ae4"
+                        ]   
+                    } 
+                },
+
+                "tooltip": [
+                    {"title": "Airport", "field": "AIRPORT", "type": "nominal"},
+                    {"field": "Month", "type": "quantitative", "format": ","},
+                    {"title": "Domestic passengers", "field": "Dom_Pax_Total", "type": "quantitative", "format": ","}
+                ]
+                        
+            }
+        },
+        {
+            "mark": {"type": "line", "strokeDash": [2, 4]},
+            "encoding": {
+                "x": {
+                    "field": "Month",
+                    "type": "ordinal",
+                    "title": "Month"
+                },
+
+                "y": {
+                    "field": "Int_Pax_Total",
+                    "type": "quantitative",
+                    "title": "Passengers Arriving",
+                    "scale": {"domain": [0, 3000000]}
+                },
+
+                "color": {
+                    "field": "AIRPORT",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "ADELAIDE",
+                            "ALICE SPRINGS",
+                            "MELBOURNE",
+                            "GOLD COAST",
+                            "HOBART",
+                            "PERTH",
+                            "BRISBANE",
+                            "SYDNEY",
+                            "SUNSHINE"
+                        ],
+
+                        "range": [
+                            "#e41a1c",
+                            "#984ea3",
+                            "#ff7f00",
+                            "#a6cee3",
+                            "#377eb8",
+                            "#a65628",
+                            "#2be41a",
+                            "#e6ff4a",
+                            "#671ae4"
+                        ]   
+                    } 
+                },
+
+                "tooltip": [
+                    {"title": "Airport", "field": "AIRPORT", "type": "nominal"},
+                    {"field": "Month", "type": "quantitative", "format": ","},
+                    {"title": "International passengers", "field": "Int_Pax_Total", "type": "quantitative", "format": ","}
+                ]
+            }
+        }
+    ]
+}
+    
