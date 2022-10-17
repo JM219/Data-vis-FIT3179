@@ -72,13 +72,13 @@
                 "x": {
                     "field": "Month",
                     "type": "ordinal",
-                    "title": "Domestic passengers total"
+                    "title": "Month"
                 },
 
                 "y": {
                     "field": "Dom_Pax_Total",
                     "type": "quantitative",
-                    "title": "Domestic passengers Arriving",
+                    "title": "Passengers Arriving",
                     "scale": {"domain": [0, 3000000]}
                 },
 
@@ -106,7 +106,7 @@
                             "#377eb8",
                             "#a65628",
                             "#2be41a",
-                            "#e47f1a",
+                            "#e6ff4a",
                             "#671ae4"
                         ]   
                     } 
@@ -121,18 +121,18 @@
             }
         },
         {
-            "mark": "line",
+            "mark": {"type": "line", "strokeDash": [2, 4]},
             "encoding": {
                 "x": {
                     "field": "Month",
                     "type": "ordinal",
-                    "title": "Domestic passengers total"
+                    "title": "Month"
                 },
 
                 "y": {
                     "field": "Int_Pax_Total",
                     "type": "quantitative",
-                    "title": "Domestic passengers Arriving",
+                    "title": "Passengers Arriving",
                     "scale": {"domain": [0, 3000000]}
                 },
 
@@ -160,7 +160,7 @@
                             "#377eb8",
                             "#a65628",
                             "#2be41a",
-                            "#e47f1a",
+                            "#e6ff4a",
                             "#671ae4"
                         ]   
                     } 
