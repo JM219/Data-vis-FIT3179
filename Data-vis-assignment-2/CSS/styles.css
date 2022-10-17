@@ -12,19 +12,25 @@ body {
     background-color: #e3e9ec;
 }
 
-/* Section background */
+/* Middle section */
+.MSection {
+    background-color: #8a9194;
+    padding: 20px;
+}
 
 
 /* Main heading */
 .heading {
-    font-size: 55px;
+    font-size: 60px;
     font-family: 'Times New Roman', Times, serif;
 }
+
 
 /* Introduction paragraph */
 .intro {
     font-size: medium;
     font-family: "Arial";
+    padding-bottom: 30px;
 }
 
 .map {
@@ -37,8 +43,9 @@ body {
 
 /* Plot title */
 .plotTitle {
-    font-size: small;
+    font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 /* Explination paragraphs */

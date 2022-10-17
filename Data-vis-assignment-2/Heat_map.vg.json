@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 400,
     "title": "",
-    "background": "#9fa8ac",
+    "background": "#8a9194",
     "data": {
         "url": "https://raw.githubusercontent.com/JM219/Data-vis-FIT3179/main/Data-vis-assignment-2/Data_01.csv"
     },

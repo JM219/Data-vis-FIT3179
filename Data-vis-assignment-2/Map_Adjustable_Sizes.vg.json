@@ -70,10 +70,12 @@
                 "longitude": {"field": "Long_Pos", "type": "quantitative"},
                 "latitude":  {"field": "Lat_Pos", "type": "quantitative"},
                 "size": {
+                    "title": "Passenger Total",
                     "field": "Pax_Total",
                     "type":"quantitative",
-                    "scale": {"domain": [0, 100000, 200000, 300000, 400000, 500000, 1000000, 1500000, 2000000, 3000000]}},
-                "color": {"value": "#DC143C"}                
+                    "scale": {"domain": [0, 100000, 200000, 300000, 400000, 500000, 1000000, 1500000, 2000000, 3000000]}
+                },
+                "color": {"value": "#DC143C"}
             }
         },
         {
@@ -102,10 +104,24 @@
             "mark": { "type": "circle", "tooltip": {"content":"data"}, "fillOpacity": 0},
 
             "encoding": {
+
                 "longitude": {"field": "Long_Pos", "type": "quantitative"},
                 "latitude":  {"field": "Lat_Pos", "type": "quantitative"},
-                "size": { "value": 300  }
-                } 
+                "size": { "value": 300  },
+
+                "tooltip": [
+                    {"title": "Airport", "field": "AIRPORT", "type": "nominal"},
+                    {"title": "Total Domestic passengers: ", "field": "Dom_Pax_Total", "type": "quantitative"},
+                    {"title": "Domestic arriving: ", "field": "Dom_Pax_In", "type": "quantitative"},
+                    {"title": "Domestic leaving: ", "field": "Dom_Pax_Out", "type": "quantitative"},
+                    {"title": "Total International passengers", "field": "Int_Pax_Total", "type": "quantitative"},
+                    {"title": "International arriving", "field": "Int_Pax_In", "type": "quantitative"},
+                    {"title": "International leaving", "field": "Int_Pax_Out", "type": "quantitative"},
+                    {"title": "Total passengers", "field": "Pax_Total", "type": "quantitative"},
+                    {"title": "Net arriving", "field": "Pax_In", "type": "quantitative"},
+                    {"title": "Net leaving", "field": "Pax_Out", "type": "quantitative"}
+                ]
+            } 
         }        
     ]
 }
