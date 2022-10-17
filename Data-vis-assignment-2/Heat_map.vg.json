@@ -77,6 +77,13 @@
             "type": "quantitative",
             "legend": {"title": "Number of passengers"},
             "scale": {"type": "pow"}
-        }
+        },
+
+        "tooltip":
+            [
+                {"title": "Year ", "field": "Year", "timeUnit": "year"},
+                {"title": "Month ", "field": "Month", "timeUnit": "month"},
+                {"title": "Total number of passengers ", "field": "Pax_Total", "type": "quantitative"}
+            ]
     }
 }
